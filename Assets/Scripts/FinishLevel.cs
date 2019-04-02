@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class FinishLevel : MonoBehaviour
 {
     //public GameObject levelMusic;
+    public GameObject levelTimer;
     public AudioSource levelComplete;
     public GameObject completeText;
+    public GameObject fadeOut;
     public GameObject timeLeft;
     public GameObject collectScore;
     public GameObject totalScore;
-    public GameObject fadeOut;
     public int timeCalc;
     public int scoreCalc;
     public int totalScored;
@@ -24,6 +25,7 @@ public class FinishLevel : MonoBehaviour
         totalScored = GlobalScore.currentScore + timeCalc;
         totalScore.GetComponent<Text>().text = "Total Score: " + totalScored;
         //levelMusic.SetActive(false);
+        levelTimer.SetActive(false);
         levelComplete.Play();
         StartCoroutine(LevelComplete());
     }
@@ -39,5 +41,6 @@ public class FinishLevel : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         totalScore.SetActive(true);
         yield return new WaitForSeconds(0.5f);
+        //}
     }
 }
