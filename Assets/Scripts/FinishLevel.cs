@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class FinishLevel : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         totalScore.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        //}
+        SceneManager.LoadScene(RedirectToLevel.nextLevel);
+            
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public AudioSource collectSound;
+    public AudioSource damagedSound;
 
     void OnTriggerEnter()
     {
         Health.extraHealth -= 1;
-        collectSound.Play();
+        damagedSound.Play();
     }
 }
