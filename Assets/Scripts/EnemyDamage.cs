@@ -8,7 +8,10 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        Health.extraHealth -= 1;
-        damagedSound.Play();
+        if (Health.playerHealth > 0)
+        {
+            Health.damage -= 1;
+            damagedSound.Play();
+        }
     }
 }

@@ -10,7 +10,7 @@ public class CollectAcorn : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        GlobalScore.currentScore += 1000;
+        GlobalScore.currentScore += 1;
         collectSound.Play();
         Destroy(gameObject);
     }

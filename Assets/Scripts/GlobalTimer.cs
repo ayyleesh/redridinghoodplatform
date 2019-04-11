@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GlobalTimer : MonoBehaviour
 {
+    public Slider timeSlider;
     public GameObject timerDisplay;
     public bool countingDown;
     public int seconds = 150;
@@ -25,6 +26,7 @@ public class GlobalTimer : MonoBehaviour
     {
         countingDown = true;
         seconds -= 1;
+        timeSlider.value = seconds;
         timerDisplay.GetComponent<Text>().text = "" + seconds;
         yield return new WaitForSeconds(1);
         countingDown = false;

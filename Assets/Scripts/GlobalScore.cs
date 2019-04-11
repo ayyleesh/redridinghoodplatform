@@ -8,11 +8,12 @@ public class GlobalScore : MonoBehaviour
     public GameObject scoreBox;
     public static int currentScore;
     public int internalScore;
+    public int totalCollect;
 
     // Update is called once per frame
     void Update()
     {
         internalScore = currentScore;
-        scoreBox.GetComponent<Text>().text = "" + internalScore;
+        scoreBox.GetComponent<Text>().text = "" + internalScore + "/" + totalCollect;
     }
 }
