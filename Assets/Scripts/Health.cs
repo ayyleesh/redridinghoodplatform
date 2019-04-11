@@ -14,12 +14,12 @@ public class Health : MonoBehaviour
 
     public RawImage[] hearts;
     public static int extraHealth;
-    public static int initialLive;
+    public int initialLive;
     public int maxLives;
 
     void Start()
     {
-        initialLive = 5;
+
     }
 
     // Update is called once per frame
