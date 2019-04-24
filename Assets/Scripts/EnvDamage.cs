@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class EnvDamage : MonoBehaviour
 {
     public int damage_amt = 1;
 
@@ -14,6 +14,7 @@ public class EnemyDamage : MonoBehaviour
             Vector3 hitDirection = other.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
             FindObjectOfType<Health>().HurtPlayer(damage_amt, hitDirection);
+            FindObjectOfType<Health>().Respawn();
         }
     }
 }

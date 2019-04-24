@@ -8,11 +8,14 @@ public class CollectAcorn : MonoBehaviour
     public GameObject scoreBox;
     public AudioSource collectSound;
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        GlobalScore.currentScore += 1;
-        collectSound.Play();
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            GlobalScore.currentScore += 1;
+            collectSound.Play();
+            Destroy(gameObject);
+        }
     }
 
 }

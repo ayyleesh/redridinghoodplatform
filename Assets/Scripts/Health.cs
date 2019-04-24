@@ -6,32 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    //Start is called before the first frame update
-    PlayerScript playerScript;
-    Animator playerAC;
-
     private int health;
-    public static int playerHealth;
-    public GameObject dead;
-    public GameObject fadeOut;
+    private bool isRespawning;
+    private Vector3 respawnPoint;
 
+    public AudioSource damagedSound;
+    public static int playerHealth;
     public RawImage[] hearts;
-    public static int extraHealth;
-    public static int damage;
     public int initialLive;
     public int maxLives;
 
-    void Awake()
+    public PlayerScript player;
+    public GameObject dead;
+    public GameObject fadeOut;
+
+    void Start()
     {
-        playerScript = GetComponent<PlayerScript>();
-        playerAC = GetComponent<Animator>();
+        health = initialLive;
+        player = FindObjectOfType<PlayerScript>();
+        respawnPoint = player.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        health = initialLive + extraHealth + damage;
-        playerHealth = health;
 
         if (health <= maxLives)
         {
@@ -64,5 +61,37 @@ public class Health : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
+    }
+
+    public void HurtPlayer(int damage, Vector3 direction)
+    {
+        health -= damage;
+        damagedSound.Play();
+    }
+
+    public void HealPlayer(int heal)
+    {
+        health += heal;
+
+        if (health > maxLives)
+        {
+            health = maxLives;
+        }
+    }
+
+    public void Respawn()
+    {
+        if (health > 0 && !isRespawning)
+        {
+            StartCoroutine(RespawnCoRoutine());
+        }
+    }
+
+    IEnumerator RespawnCoRoutine()
+    {
+        isRespawning = true;
+        yield return new WaitForSeconds(0.5f);
+        isRespawning = false;
+        player.transform.position = respawnPoint;
     }
 }

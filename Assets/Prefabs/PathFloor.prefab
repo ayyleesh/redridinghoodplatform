@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8250669734788714358}
   - component: {fileID: 9091337046137479473}
   - component: {fileID: 5804016590631545166}
-  - component: {fileID: 920726746014376472}
+  - component: {fileID: 2536961372975368263}
   m_Layer: 0
   m_Name: PathFloor
   m_TagString: Untagged
@@ -78,8 +78,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &920726746014376472
-BoxCollider:
+--- !u!64 &2536961372975368263
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -88,6 +88,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0044254, y: 0.20033735, z: 1.1540402}
-  m_Center: {x: 0, y: 0.100168675, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: a415174bfd1c4214c8fa8a3dd313aba6, type: 3}

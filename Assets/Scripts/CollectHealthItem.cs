@@ -6,12 +6,17 @@ using UnityEngine.UI;
 public class CollectHealthItem : MonoBehaviour
 {
     public AudioSource collectSound;
+    public int heal_amt = 1;
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        Health.extraHealth += 1;
-        collectSound.Play();
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            FindObjectOfType<Health>().HealPlayer(heal_amt);
+            collectSound.Play();
+            Destroy(gameObject);
+        }
+        
     }
 
 }
