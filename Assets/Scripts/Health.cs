@@ -8,13 +8,14 @@ public class Health : MonoBehaviour
 {
     private int health;
     private bool isRespawning;
-    private Vector3 respawnPoint;
+    public Vector3 respawnPoint;
 
     public AudioSource damagedSound;
     public static int playerHealth;
     public RawImage[] hearts;
     public int initialLive;
     public int maxLives;
+    public float respawnDelay;
 
     public PlayerScript player;
     public GameObject dead;
@@ -29,7 +30,6 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-
         if (health <= maxLives)
         {
 
@@ -87,10 +87,15 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void ChangeCheckPoint(Vector3 newCheckPoint)
+    {
+        respawnPoint = newCheckPoint;
+    }
+
     IEnumerator RespawnCoRoutine()
     {
         isRespawning = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(respawnDelay);
         isRespawning = false;
         player.transform.position = respawnPoint;
     }

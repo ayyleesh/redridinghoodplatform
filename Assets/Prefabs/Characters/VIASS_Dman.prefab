@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 629243448}
   - component: {fileID: 2711481457196720283}
   - component: {fileID: 629243447}
+  - component: {fileID: 8689507443181664110}
   m_Layer: 0
   m_Name: VIASS_Dman
   m_TagString: Untagged
@@ -464,6 +465,33 @@ MonoBehaviour:
   jumpForce: 8
   gravityScale: 3
   rotSpeed: 3
+  knockBackForce: 0
+  knockBackTime: 0
+--- !u!114 &8689507443181664110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629243446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9c44b40a1e73640a906528be9791f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedSound: {fileID: 0}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  initialLive: 3
+  maxLives: 5
+  respawnDelay: 1
+  player: {fileID: 629243447}
+  dead: {fileID: 0}
+  fadeOut: {fileID: 0}
 --- !u!1 &695065527
 GameObject:
   m_ObjectHideFlags: 0

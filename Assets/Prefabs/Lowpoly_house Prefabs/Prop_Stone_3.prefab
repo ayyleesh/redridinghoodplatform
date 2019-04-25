@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4919730718808628}
   - component: {fileID: 33726180591381552}
   - component: {fileID: 23585060771338356}
-  - component: {fileID: 7479743222822674844}
+  - component: {fileID: 6777365360056893316}
   m_Layer: 0
   m_Name: Prop_Stone_3
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7479743222822674844
+--- !u!64 &6777365360056893316
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
