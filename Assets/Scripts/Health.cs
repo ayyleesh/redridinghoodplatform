@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     private int health;
     private bool isRespawning;
     public Vector3 respawnPoint;
+    public GameObject[] enemy;
 
     public AudioSource damagedSound;
     public static int playerHealth;
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
         health = initialLive;
         player = FindObjectOfType<PlayerScript>();
         respawnPoint = player.transform.position;
+        enemy = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     void Update()

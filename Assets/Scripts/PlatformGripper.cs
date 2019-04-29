@@ -7,9 +7,13 @@ public class PlatformGripper : MonoBehaviour
     public GameObject platform;
     public GameObject player;
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        player.transform.parent = platform.transform;
+        if (other.gameObject == player)
+        {
+            player.transform.parent = platform.transform;
+        }
+        
     }
 
     void OnTriggerExit()
