@@ -5,6 +5,7 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     public GameObject checkPointObject;
+    public AudioSource checkedIn;
     private Vector3 currentCheckPoint;
     private Vector3 offset;
 
@@ -18,6 +19,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            checkedIn.Play();
             FindObjectOfType<Health>().ChangeCheckPoint(currentCheckPoint);
         }
     }

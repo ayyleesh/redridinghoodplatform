@@ -8,6 +8,7 @@ public class FinishLevel : MonoBehaviour
 {
     //public GameObject levelMusic;
     public GameObject levelTimer;
+    public GameObject levelMusic;
     public AudioSource levelComplete;
     public GameObject completeText;
     public GameObject fadeOut;
@@ -34,6 +35,7 @@ public class FinishLevel : MonoBehaviour
 
     IEnumerator LevelComplete()
     {
+        levelMusic.SetActive(false);
         fadeOut.SetActive(true);
         completeText.SetActive(true);
         yield return new WaitForSeconds(1);
@@ -44,6 +46,6 @@ public class FinishLevel : MonoBehaviour
         totalScore.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(RedirectToLevel.nextLevel);
-            
+        GlobalScore.currentScore = 0;
     }
 }

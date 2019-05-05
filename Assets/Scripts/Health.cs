@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     private bool isRespawning;
     public Vector3 respawnPoint;
     public GameObject[] enemy;
-
+    public GameObject levelMusic;
     public AudioSource damagedSound;
     public static int playerHealth;
     public RawImage[] hearts;
@@ -56,10 +56,11 @@ public class Health : MonoBehaviour
         {
             //playerScript.enabled = false;
             dead.SetActive(true);
-            //levelAudio.SetActive(false);
+            levelMusic.SetActive(false);
             yield return new WaitForSeconds(2);
             fadeOut.SetActive(true);
             yield return new WaitForSeconds(1);
+            GlobalScore.currentScore = 0;
             SceneManager.LoadScene(1);
         }
 

@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
+    public AudioSource spawnSound;
     public GameObject enemy;
     public float spawnDelay;
+    private bool hasPlayed = false;
 
     public Transform spawnPoint;
 
@@ -20,6 +22,11 @@ public class EnemySpawn : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Invoke("Spawn", spawnDelay);
+            if (!hasPlayed)
+            {
+                spawnSound.Play();
+                hasPlayed = true;
+            }
         }
     }
 
