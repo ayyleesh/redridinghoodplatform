@@ -8,8 +8,8 @@ public class Level002 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RedirectToLevel.redirectToLevel = 2;
-        RedirectToLevel.nextLevel = 3;
+        RedirectToLevel.redirectToLevel = 3;
+        RedirectToLevel.nextLevel = 4;
         StartCoroutine(FadeInOFf());
     }
 

@@ -25,6 +25,6 @@ public class EnemySpawn : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        enemy.SetActive(true);
     }
 }

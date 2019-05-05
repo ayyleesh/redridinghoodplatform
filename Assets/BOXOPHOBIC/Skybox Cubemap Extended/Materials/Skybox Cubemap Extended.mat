@@ -83,7 +83,7 @@ Material:
     - _EnableFog: 1
     - _EnableRotation: 1
     - _Exposure: 1
-    - _FogFill: 0
+    - _FogFill: 0.6
     - _FogHeight: 0
     - _FogSmoothness: 0.01
     - _GlossMapScale: 1
@@ -105,4 +105,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Tex_HDR: {r: 1, g: 1, b: 0, a: 0}
-    - _TintColor: {r: 0.7254902, g: 0.5647059, b: 0.7176471, a: 1}
+    - _TintColor: {r: 1, g: 0.9028832, b: 0.8160377, a: 1}

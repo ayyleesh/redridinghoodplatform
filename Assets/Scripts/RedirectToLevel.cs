@@ -12,7 +12,8 @@ public class RedirectToLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (redirectToLevel >= 1)
+        if (redirectToLevel >= 2)
+        //if (redirectToLevel >= 1)
         {
             SceneManager.LoadScene(redirectToLevel);
         }

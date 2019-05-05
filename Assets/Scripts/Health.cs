@@ -60,7 +60,7 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(2);
             fadeOut.SetActive(true);
             yield return new WaitForSeconds(1);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
     }
